@@ -11,6 +11,24 @@ for (let i = 0; i < z; i++){
   div.style.width = `${w}px`;
   div.style.height = `${h}px`;
   div.className = "innerbox";
+  div.id = `id${i}`;
   app.appendChild(div);
   
 }
+
+const divs = document.querySelectorAll(".innerbox");
+
+divs.forEach(div => {
+  div.addEventListener("mouseover", () => {
+    div.style.backgroundColor = "black";
+  });
+});
+let btn = document.querySelector("button");
+
+btn.addEventListener("click", () => {
+  divs.forEach(div => {
+    div.style.backgroundColor = "";
+  })
+    
+
+});
